@@ -1,9 +1,5 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-interface IUserState {
-  id: number
-}
-
 export const userQuery = createAsyncThunk('user/query', async () => {
   return { id: 999 }
 })
