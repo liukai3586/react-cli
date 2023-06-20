@@ -17,15 +17,7 @@ function App() {
     }, 2000)
   }, [])
 
-  return (
-    <>
-      {loading ? (
-        <Spin></Spin>
-      ) : (
-        <Router routes={[...routes, ...newRoutes]}></Router>
-      )}
-    </>
-  )
+  return <>{loading ? <Spin></Spin> : <Router routes={[...routes, ...newRoutes]}></Router>}</>
 }
 
 export default App

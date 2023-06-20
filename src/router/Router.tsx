@@ -1,10 +1,4 @@
-import {
-  Navigate,
-  RouteObject,
-  matchRoutes,
-  useLocation,
-  useRoutes
-} from 'react-router-dom'
+import { Navigate, RouteObject, matchRoutes, useLocation, useRoutes } from 'react-router-dom'
 import { IRoute } from '../type'
 import { lazy, Suspense, useEffect, useState } from 'react'
 import NoPage from '../pages/404'
@@ -21,9 +15,7 @@ const loadRouter = (_routes: IRoute[]): RouteObject[] => {
     if (redirect) {
       Component = () => <Navigate to={redirect}></Navigate>
     } else {
-      Component = lazy(
-        () => import(/* @vite-ignore */ `../${_route.component}`)
-      )
+      Component = lazy(() => import(/* @vite-ignore */ `../${_route.component}`))
     }
     return {
       path: _route.path,
